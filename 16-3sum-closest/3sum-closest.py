@@ -7,14 +7,12 @@ class Solution:
             right = len(nums) - 1
             while left < right :
                 total = nums[i] + nums[left] + nums[right]
+                if total == target:
+                    return target
                 if abs(total - target) < abs(closest - target):
                     closest = total
                 if total < target:
                     left += 1
-                elif total > target:
-                    right -= 1
                 else:
-                    return total
+                    right -= 1               
         return closest
-
-        
